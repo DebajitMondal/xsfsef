@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title>Dragon Ball Z</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+      <script src="p5.play.js"></script>
+      <script src="Game.js"></script>
+
+      
+
+
+      <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+      <script src="sketch.js"></script>
+      <main>
+         <div id = "output"></div>
+      </main>
+      <script>
+       let orn = getOrientataion();
+       let out = document.getElementById('output')
+
+      function getOrientataion(){
+        let _orn = screen.msOrientataion || (screen.orientation || screen.mozOrientataion).type;
+
+        switch(_orn){
+         case 'potrait-primary':
+             break;
+         case 'portrait-scondary':
+             break;
+         case 'landscape-primary':
+             break;
+         case 'landscape-secondary':
+             break;
+         case undefined:
+             break;
+         default:
+        }
+
+
+        window.addEventListener('orientationchange', (ev)=>{
+          orn = getOrientataion();
+          out.textContent = orn;
+          console.dir(ev)
+
+
+        })
+
+
+      }
+       
+
+
+
+      </script>
+
+
+    </body>
+  </html>
